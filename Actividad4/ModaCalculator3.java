@@ -27,5 +27,15 @@ public class ModaCalculator3 {
             if (p2.prim <= p2.ult)
                 homogeneo.insertar(p2);
         }
+
+        if (homogeneo.esVacio()) {
+            return a[prim];
+        }
+
+        Limits result = homogeneo.mayor();
+        homogeneo.destruir();
+        heterogeneo.destruir();
+
+        return result.array[result.prim];
     }
 }
