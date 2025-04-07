@@ -18,5 +18,9 @@ public class Pivoteador {
         izq[0] = i;
         der[0] = j;
     }
-
+    private static void swap(int[] array, int i, int j) {
+        int temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
 }
