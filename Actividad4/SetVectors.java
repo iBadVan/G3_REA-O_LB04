@@ -17,4 +17,16 @@ public class SetVectors {
     public Limits mayor() {
         return elementos.poll(); // Extrae el mayor
     }
+    public int longMayor() {
+        Limits mayor = elementos.peek();
+        return (mayor != null) ? mayor.length() : 0;
+    }
+
+    public boolean esVacio() {
+        return elementos.isEmpty();
+    }
+
+    public void destruir() {
+        elementos.clear();
+    }
 }
