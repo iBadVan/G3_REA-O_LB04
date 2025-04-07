@@ -33,4 +33,14 @@ public class pythagorasTree extends JPanel{
         trazaArbol(g, x2, y2, nuevoLado, angulo - 45, nivel - 1);
         trazaArbol(g, x2, y2, nuevoLado, angulo + 45, nivel - 1);
     }
+
+    // Clase principal para ejecutar
+    public static void main(String[] args) {
+        JFrame ventana = new JFrame("Árbol de Pitágoras");
+        ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        ventana.add(new pythagorasTree(6));  // niveles
+        ventana.pack();
+        ventana.setLocationRelativeTo(null);
+        ventana.setVisible(true);
+    }
 }
