@@ -28,7 +28,7 @@ public class ModaCalculator3 {
                 homogeneo.insertar(p2);
         }
 
-        if (homogeneo.esVacio()) {
+        if (homogeneo.esVacio()) {  
             return a[prim];
         }
 
