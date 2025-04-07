@@ -10,4 +10,11 @@ public class SetVectors {
         // Ordenamos por longitud descendente (el más largo primero)
         elementos = new PriorityQueue<>(Comparator.comparingInt(Limits::length).reversed());
     }
+    public void insertar(Limits l) {
+        elementos.offer(l);
+    }
+
+    public Limits mayor() {
+        return elementos.poll(); // Extrae el mayor
+    }
 }
