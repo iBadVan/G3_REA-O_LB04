@@ -48,7 +48,16 @@ public class QuickSelect {
         return quickSelect(arr, 0, arr.length - 1, k - 1);
     }
 
-    
+    public static void main(String[] args) {
+        // Ejemplos de entrada
+        int[] arr1 = {4, 2, 7, 10, 4, 17};
+        System.out.println("El tercer elemento más pequeño es: " + findKthSmallest(arr1, 3));  // Salida: 4
 
+        int[] arr2 = {4, 2, 7, 10, 4, 1, 6};
+        System.out.println("El quinto elemento más pequeño es: " + findKthSmallest(arr2, 5));  // Salida: 6
+
+        int[] arr3 = {9, 2, 7, 1, 7};
+        System.out.println("El cuarto elemento más pequeño es: " + findKthSmallest(arr3, 4));  // Salida: 7
+    }
 
 }
