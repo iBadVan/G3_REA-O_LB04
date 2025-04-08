@@ -51,8 +51,8 @@ public class SubconjuntoRestringido  {
         int n = entrada[0];
         int[] datos = new int[n];
         System.arraycopy(entrada, 1, datos, 0, n);
-        int objetivo = entrada[n + 1];
+        int objetivo = entrada[entrada.length - 1]; 
         return puedeFormarObjetivo(datos, objetivo);
     }
-
+    
 }
