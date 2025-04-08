@@ -40,5 +40,13 @@ public class MinCostTravel {
             }
         }
 
+        System.out.println("Matriz de costes mínimos C:");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(C[i][j] + " ");
+            }
+            System.out.println();
+        }
+
     }
 }
