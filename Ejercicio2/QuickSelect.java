@@ -44,7 +44,6 @@ public class QuickSelect {
     }
 
     public static int findKthSmallest(int[] arr, int k) {
-        // Restamos 1 porque el índice en Java comienza desde 0
         return quickSelect(arr, 0, arr.length - 1, k - 1);
     }
 
