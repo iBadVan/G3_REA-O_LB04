@@ -19,13 +19,13 @@ public class MinCostTravel {
         }
         
         // Usamos un valor suficientemente grande para representar "infinito"
-        int INF = 1000000; // El valor "infinito"
+        int INF = 1000000;
         
         int[][] C = new int[n][n];
         
         // Inicialización de la matriz C para los casos donde i == j
         for (int i = 0; i < n; i++) {
-            C[i][i] = 0; // El coste de ir de un embarcadero a sí mismo es 0
+            C[i][i] = 0; // El coste de ir de un embarcadero a el mismo es 0
         }
         
         // Inicializar la matriz C con el valor de "infinito" donde no hay un camino directo
@@ -64,7 +64,7 @@ public class MinCostTravel {
             System.out.println();
         }
 
-        // Salida: Coste mínimo entre el primer y el último embarcadero
+        // Coste mínimo entre el primer y el último embarcadero
         System.out.println("El coste mínimo para viajar de 0 a " + (n-1) + " es: " + C[0][n-1]);
         
         sc.close();
