@@ -48,5 +48,9 @@ public class MinCostTravel {
             System.out.println();
         }
 
+        System.out.println("El coste mínimo para viajar de 0 a " + (n-1) + " es: " + C[0][n-1]);
+        
+        sc.close();
+
     }
 }
