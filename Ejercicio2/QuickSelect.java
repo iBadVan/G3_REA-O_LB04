@@ -22,6 +22,26 @@ public class QuickSelect {
 
         return i + 1; // eetorna el índice del pivote
     }
-
     
+    public static int quickSelect(int[] arr, int low, int high, int k) {
+        if (low <= high) {
+            int pivotIndex = partition(arr, low, high);
+
+            // Si el pivote es el k-ésimo elemento
+            if (pivotIndex == k) {
+                return arr[pivotIndex];
+            }
+            // Si el pivote está en una posición mayor que k, buscamos en el subarreglo izquierdo
+            else if (pivotIndex > k) {
+                return quickSelect(arr, low, pivotIndex - 1, k);
+            }
+            // Si el pivote está en una posición menor que k, buscamos en el subarreglo derecho
+            else {
+                return quickSelect(arr, pivotIndex + 1, high, k);
+            }
+        }
+        return -1; // En caso de error
+    }
+
+
 }
