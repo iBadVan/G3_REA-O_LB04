@@ -22,7 +22,7 @@ public class QuickSelect {
 
         return i + 1; // eetorna el índice del pivote
     }
-    
+
     public static int quickSelect(int[] arr, int low, int high, int k) {
         if (low <= high) {
             int pivotIndex = partition(arr, low, high);
@@ -42,6 +42,13 @@ public class QuickSelect {
         }
         return -1; // En caso de error
     }
+
+    public static int findKthSmallest(int[] arr, int k) {
+        // Restamos 1 porque el índice en Java comienza desde 0
+        return quickSelect(arr, 0, arr.length - 1, k - 1);
+    }
+
+    
 
 
 }
