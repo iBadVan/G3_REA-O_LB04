@@ -2,21 +2,17 @@ package Ejercicio1;
 
 public class SubconjuntoRestringido  {
     public static boolean esPotenciaDe2(int n) {
-        if (n <= 0) {
+        if (n <= 1) {
             return false;
         }
     
-        int original = n; // para debug
         while (n % 2 == 0) {
             n = n / 2;
         }
     
-        boolean resultado = (n == 1);
-        if (resultado) {
-            System.out.println(original + " es potencia de 2");
-        }
-        return resultado;
+        return n == 1;
     }
+    
     
 
     public static boolean puedeFormarObjetivo(int[] arr, int target) {
@@ -41,6 +37,11 @@ public class SubconjuntoRestringido  {
             return backtrack(arr, index + 1, sumaActual, objetivo);
         }
 
+        if (!esPotenciaDe2(actual) && actual % 5 != 0) {
+            // No se puede incluir (ya que no cumple ninguna regla)
+            return backtrack(arr, index + 1, sumaActual, objetivo);
+        }
+        
         //incluir el número actual
         if (backtrack(arr, index + 1, sumaActual + actual, objetivo)) 
             return true;
