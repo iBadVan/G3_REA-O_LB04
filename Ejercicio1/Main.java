@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
         
 
-        int[] entrada = {5,4,8,10,3,5,27};
+        int[] entrada = {4,4,8,10,4,22};
         boolean resultado = SubconjuntoRestringido.resolverEntrada(entrada);
         
         if (resultado) {

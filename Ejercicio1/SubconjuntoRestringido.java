@@ -16,7 +16,6 @@ public class SubconjuntoRestringido  {
     
 
     public static boolean puedeFormarObjetivo(int[] arr, int target) {
-        int n = arr.length;
         return backtrack(arr, 0, 0, target);
     }
 
@@ -41,7 +40,7 @@ public class SubconjuntoRestringido  {
             // No se puede incluir (ya que no cumple ninguna regla)
             return backtrack(arr, index + 1, sumaActual, objetivo);
         }
-        
+
         //incluir el número actual
         if (backtrack(arr, index + 1, sumaActual + actual, objetivo)) 
             return true;
