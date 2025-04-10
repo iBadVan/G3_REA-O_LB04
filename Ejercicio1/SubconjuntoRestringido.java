@@ -6,11 +6,16 @@ public class SubconjuntoRestringido  {
             return false;
         }
     
+        int original = n; // para debug
         while (n % 2 == 0) {
             n = n / 2;
         }
     
-        return n == 1;
+        boolean resultado = (n == 1);
+        if (resultado) {
+            System.out.println(original + " es potencia de 2");
+        }
+        return resultado;
     }
     
 
