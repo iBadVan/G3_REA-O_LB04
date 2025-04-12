@@ -1,7 +1,7 @@
 package Ejercicio1;
 
 public class SubconjuntoRestringido  {
-    public static boolean esPotenciaDe2(int n) {
+    private static boolean esPotenciaDe2(int n) {
         if (n <= 1) {
             return false;
         }
@@ -13,8 +13,6 @@ public class SubconjuntoRestringido  {
         return n == 1;
     }
     
-    
-
     public static boolean puedeFormarObjetivo(int[] arr, int target) {
         return backtrack(arr, 0, 0, target);
     }
@@ -31,9 +29,9 @@ public class SubconjuntoRestringido  {
         }
 
         //múltiplos de 5 con restricción
+        boolean puedeIncluir = true;
         if (actual % 5 == 0 && index + 1 < arr.length && arr[index + 1] % 2 != 0) {
-            // No se puede incluir
-            return backtrack(arr, index + 1, sumaActual, objetivo);
+            puedeIncluir = false;
         }
 
         if (!esPotenciaDe2(actual) && actual % 5 != 0) {
@@ -41,9 +39,10 @@ public class SubconjuntoRestringido  {
             return backtrack(arr, index + 1, sumaActual, objetivo);
         }
 
-        //incluir el número actual
-        if (backtrack(arr, index + 1, sumaActual + actual, objetivo)) 
+        //si se puede agregar prueba la rama de:
+        if (puedeIncluir && backtrack(arr, index + 1, sumaActual + actual, objetivo)) {
             return true;
+        }
 
         // no incluirlo
         if (backtrack(arr, index + 1, sumaActual, objetivo)) 
